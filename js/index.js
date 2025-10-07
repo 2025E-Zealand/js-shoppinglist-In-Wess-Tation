@@ -24,6 +24,11 @@ function deleteNode(id, type) {
     return node;
 }
 
+function editNode(id, type) {
+    let node = document.getElementById(id);
+    node.textContent = "I am an edited node";
+    return node;
+}
 
 
 
@@ -36,3 +41,7 @@ console.log(newNode);
 let deletedNode = deleteNode("0", "li");
 console.log("Deleted node is: ");
 console.log(deletedNode);
+
+let editedNode = editNode("1", "li");
+console.log("Edited node is: ");
+console.log(editedNode);
