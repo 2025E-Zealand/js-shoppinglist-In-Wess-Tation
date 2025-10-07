@@ -31,9 +31,9 @@ function deleteNode(id) {
     return node;
 }
 
-function editNode(id) {
+function editNode(id, newText) {
     let node = document.getElementById(id);
-    node.textContent = "I am an edited node";
+    node.textContent = newText;
 
     return node;
 }
@@ -45,6 +45,17 @@ function listCounter() {
     return listItems.length;
 }
 
+function moveNodeToUnhealthyList() {
+    let nodes = document.getElementsByClassName("unhealthy");
+    let unhealthyList = document.getElementById("listUnhealthy");
+    if (nodes && unhealthyList) {
+        unhealthyList.append(...nodes);
+        console.log("Node moved to unhealthy list.");
+    }else {
+        console.log("Node or unhealthy list not found.");
+    }
+}
+
 
 
 
@@ -54,24 +65,23 @@ console.log("Found node is: ");
 console.log(newNode);
 
 //add node
-let addedNode = addNode("Peanuts", "list");
-console.log("Added node is: ");
-console.log(addedNode);
-
 let addedNodeTwo = addNode("Bacon", "list");
 console.log("Added node is: ");
 console.log(addedNodeTwo);
 
 //delete node
-let deletedNode = deleteNode("0", "li");
+let deletedNode = deleteNode("1", "li");
 console.log("Deleted node is: ");
 console.log(deletedNode);
 
 //edit node
-let editedNode = editNode("1", "li");
+let editedNode = editNode("0", "healthy");
 console.log("Edited node is: ");
 console.log(editedNode);
 
 //list counter
 let listCount = listCounter();
 console.log("List count is: " + listCount);
+
+//move node to unhealthy list
+moveNodeToUnhealthyList();
