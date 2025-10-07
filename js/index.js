@@ -45,7 +45,7 @@ function listCounter() {
     return listItems.length;
 }
 
-function moveNodeToUnhealthyList() {
+function moveNodesToUnhealthyList() {
     let nodes = document.getElementsByClassName("unhealthy");
     let unhealthyList = document.getElementById("listUnhealthy");
     if (nodes && unhealthyList) {
@@ -84,4 +84,4 @@ let listCount = listCounter();
 console.log("List count is: " + listCount);
 
 //move node to unhealthy list
-moveNodeToUnhealthyList();
+moveNodesToUnhealthyList();
